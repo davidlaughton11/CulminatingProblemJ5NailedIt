@@ -25,6 +25,7 @@ namespace CulminatingProblemJ5NailedIt_
     /// </summary>
     public partial class MainWindow : Window
     {
+        // List of the two piece fences
         List<int> listOfInts = new List<int>();
 
         public MainWindow()
@@ -42,7 +43,8 @@ namespace CulminatingProblemJ5NailedIt_
             L = Array.ConvertAll(splitN, int.Parse);
             int lengthOfFences = 1;
             int howManyFences = 1;
-
+            
+            //for the array if there are same lengths in the list add the length of fence
             for (int i = 1; i < N; i ++)
             {
                 int Num = L[i] + L[0];
@@ -55,11 +57,14 @@ namespace CulminatingProblemJ5NailedIt_
                     }
                 }                
             }
+            
+            //If length of fences is one
             if (lengthOfFences == 1)
             {
                 howManyFences = N * 2;
                 lengthOfFences++;
             }
+            
             lblOutput.Content = lengthOfFences - 1 + " "+ howManyFences;
         }
     }
